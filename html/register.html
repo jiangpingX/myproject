@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/register.css">
+    <!-- <link rel="stylesheet" href="http//at.alicdn.com/t/font_1091122_eavbz830rse.css"> -->
+    <title>注册页面</title>
+</head>
+<body>
+    <div class="register_top">
+        <div class="register_top_in">
+            <a href="javascript:;"> <img src="../images/logo2.jpg" alt=""></a>   
+            <a href="javascript:;"><img src="../images/log-til.png" alt=""></a> 
+            <span>已注册可<span>在此登录</span></span>
+        </div>
+    </div>
+    <div class="register_middle">
+        <div class="register_middle_in">
+                <img src="../images/regis1.jpg" alt="">
+                <form action="">
+                    <div class="line" >
+                        <span class="span1">用户名</span>
+                        <input type="text" id="input1">
+                        <span class="tip_right">√</span>
+                        <span class="tip_bottom">用户名由4到16位字母，数字，下划线组成</span>
+                    </div>
+                    <div class="line" >
+                            <span class="span2">设置密码</span>
+                            <input type="password" id="input2">
+                            <span class="tip_right">√</span>
+                            <span class="tip_bottom">密码由6-21位字母和数字组成</span>
+                        </div>
+                        <div class="line" >
+                                <span class="span2">确认密码</span>
+                                <input type="password" id="input3">
+                                <span class="tip_right">√</span>
+                                <span class="tip_bottom">两次密码不一致</span>
+                            </div>
+                            <div class="line" >
+                                    <span class="span2">手机号码</span>
+                                    <input type="text" id="input4">
+                                    <span class="tip_right">√</span>
+                                    <span class="tip_bottom">手机号码格式不正确</span>
+                                </div>
+                                <div class="line" style="position:relative">
+                                        <span class="span2">手机验证码</span>
+                                        <input type="text" id="input5">
+                                        <span class="yanzheng" id="yanzhengma">获取验证码</span>
+                                        <span class="tip_right">√</span>
+                                        <span class="tip_bottom">验证码错误</span>
+                                    </div>
+                                    <div class="xieyi">
+                                        <input type="checkbox" id="checkbox">
+                                        我已阅读并同意<span>《用户注册协议》</span>
+                                        <p>您没有接受协议</p>
+                                    </div>
+                                    
+                                    <div class="btn" id="zhece">
+                                            <input type="button" value="立即注册">
+                                    </div>
+                </form>
+        </div>  
+    </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/register.js"></script>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery楼层楼梯滚动效果（原创）</title>
+<style>
+*{
+	margin:0;
+	padding:0;		
+}
+li{
+	list-style: none;
+}
+header,footer{
+	height:500px;
+	background: black;color: aliceblue
+}	
+.lc{
+	height: 1000px;
+}
+.a{
+	background: red;
+}
+.b{
+	background: green;
+}
+.c{
+	background: blue;
+}
+.d{
+	background: aquamarine;
+}
+.e{
+	background: blueviolet;
+}
+.f{
+	background: chocolate;
+}
+.tip{
+	width: 50px;
+	height: 400px;
+	position: fixed;
+	right: 5px;
+	bottom: 5px;
+	background: greenyellow;
+	display: none;
+}
+.tip>ul{
+	width: 50px;
+	height: 50px;
+}
+.tip>ol{
+	width: 50px;
+	height: 300px;
+	
+}
+.tip li{
+	width: 50px;
+	height: 49px;
+	text-align: center;
+	line-height: 50px;	
+	border-bottom: 1px solid gray;
+	cursor: pointer;
+}
+.tip li:hover{
+	background: darkcyan;
+	color: white;
+}
+
+
+</style>
+</head>
+<body>
+<header><h3 style="text-align: center;line-height: 50px">向下滚动页面查看效果</h3></header>
+<div class="lc a">1</div>
+<div class="lc b">2</div>
+<div class="lc c">3</div>
+<div class="lc d">4</div>
+<div class="lc e">5</div>
+<div class="lc f">6</div>
+<footer>footer</footer>
+<div class="tip">
+<ul>
+<li>Top</li>
+</ul>
+<ol>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>6</li>
+</ol>
+</div>
+</body>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script>
+function Floor(lc, tip){
+	this.lc = lc;
+	this.tip = tip;
+	this.ch = $(window).height()/2;
+	this.init();
+	this.tip_click();
+	this.win_scroll();
+}
+Floor.prototype.init = function(){
+	// 求每一层的top值
+	var h;
+	this.arr = this.lc.map(function(index, div){
+		h = $(div).offset().top+$(div).height();
+		return $(div).offset().top;
+	});
+	// 最后一层的高度
+	this.arr.push(h);
+	console.log( this.arr );
+}
+Floor.prototype.tip_click = function(){
+	var that = this;
+	this.tip.find("ul>li").click(function(){
+		$("html,body").animate({"scrollTop":0});
+	});
+	this.tip.find("ol>li").click(function(){
+		$("html,body").animate({"scrollTop":that.arr[$(this).index()]});
+	});
+}
+Floor.prototype.win_scroll = function(){
+	var that = this;
+	$(window).resize(function(){
+		that.ch = $(window).height()/2;
+	});
+	$(window).scroll(function(){
+		that.tip.find("ol>li").css("background","");
+		var st = $(window).scrollTop();
+		document.title = st;
+		var l = that.arr.length;
+		
+		if( st<that.arr[0]-that.ch ){
+			that.tip.fadeOut();
+		}else{
+			that.tip.fadeIn();
+		}
+		
+		for(var i=0; i<l-1; i++){
+			var min = that.arr[i];
+			var max = that.arr[i+1];
+			if( min-that.ch<st && st<max-that.ch ){ 
+				that.tip.find("ol>li").eq(i).css("background","white");
+			}
+		}
+	});
+}
+
+new Floor($(".lc"), $(".tip"));
+</script>
+</html>
