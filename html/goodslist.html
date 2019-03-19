@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1091122_7usadsammpt.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/goodslist.css">
+    <title>商品列表页面</title>
+</head>
+<body>
+    <div class="top"></div>
+    <div class="line"></div>
+    <div class="middle_content">
+        <p>首页 > 搜索商品</p>
+        <div class="pinpai">
+            <span>品牌:</span>
+            <ul>
+                <li><img src="../images/pinpai1.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai1.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai1.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai1.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai1.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai2.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai2.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai1.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai2.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai2.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai1.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai2.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai2.jpg" alt=""><span>汤米迪克</span></li>
+                <li><img src="../images/pinpai1.jpg" alt=""><span>汤米迪克</span></li>
+            </ul>
+        </div>
+        <div class="jiage">
+            <span>价格:</span>
+            <input type="text" id="starPrice">--
+            <input type="text" id="endPrice">
+            <button id="search">确定</button>
+        </div>
+        <div class="paixu">
+            <a href="javascript:;" class="selected">默认 <i>↓</i></a>
+            <a href="javascript:;">销量 <i>↑</i>  </a>
+            <a href="javascript:;">价格 <i>↑</i> </a>
+        </div>
+        <div class="goodslist">
+            <ul id="list_wrap">
+                <li>
+                    <div class="shangpin">
+                       <div class="line1" > <img src="../images/chuang1.jpg" alt=""></div>
+                       <div class="line2">
+                           <ul class="qiehuan">
+                           <li> <img src="../images/chuang10.jpg" alt=""> </li>
+                           <li><img src="../images/chuang11.jpg" alt=""> </li>
+                           <li><img src="../images/chuang13.jpg" alt=""> </li>
+                           <li><img src="../images/chuang14.jpg" alt=""> </li>
+                       </ul>
+                    </div>
+                    <div class="line3">
+                        <span class="price">￥3180.00</span>
+                        <span class="salenum">售出 <em>29</em>  件</span>
+                    </div>
+                    <div class="describe">
+                        <span>芭比城堡家具 爆款儿童卧室家具 实木粉色上下双层儿童床</span> 
+                        <span>芭比城堡原点专卖店</span>
+                    </div>
+                    <div class="footer">
+                        <a href="javascript:;"> <i class="iconfont icon-shoucang1"></i> 收藏</a>
+                        <a href="javascript:;"> <i class="iconfont icon-gouwuche1"></i> 加入购物车</a>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="yebiao">
+                <div id="box" class="page" >
+
+                    </div>
+        </div>
+        
+    </div>
+</body>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/goodslist.js"></script>
+<script src="../js/index.js"> </script>
+<script src="../js/fenye.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".top").load('header2.html');
+    })
+</script>
+</html>

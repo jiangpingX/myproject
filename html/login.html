@@ -17,18 +17,18 @@
                 <p>用第三方账号直接登录</p>
                 <img src="../images/tx.png" alt="">
                 <p>账号登录</p>
-                <p class="cuowu">账号或密码错误</p>
+                <p class="cuowu" id="cuowu_tip">提示信息</p>
                 
                 <div>
                     <i class="iconfont icon-username"></i>
-                    <input type="text" placeholder="用户名/手机">
+                    <input type="text" placeholder="用户名/手机" id="username">
                 </div> 
                 <div>
                     <i class="iconfont icon-mima"></i>
-                    <input type="password" placeholder="密码">
+                    <input type="password" placeholder="密码" id="userpwd">
                 </div>
                 <p class="s1"><input type="checkbox" value="">请保存我这次的保存信息</p>
-                <input type="submit" value="请登录">
+                <input type="submit" value="请登录" id="login">
        
             
             </div>
@@ -39,6 +39,8 @@
         </div>
 </body>
 <script src="../js/jquery-1.11.3.js"></script>
+
+<script src="../js/login.js"></script>
 <script >
 $(document).ready(function(){
 $(".top").load('commonheadr.html');

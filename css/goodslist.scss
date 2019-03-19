@@ -1,0 +1,270 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, input, button, textarea {
+    padding: 0;
+    margin: 0;
+  }
+  .line{
+      width: 100%;
+      height: 1px;
+      background-color: #f9860a;
+  }
+  .middle_content{
+      width: 1200px;
+      margin: 0 auto;
+    p{
+        text-align: left;
+        height: 40px;
+        line-height: 40px;
+    }
+    .pinpai{
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px dashed #d2d2d2;
+        height: 133px;
+        padding: 5px 10px;
+        span{
+            display: inline-block;
+            width: 100px;
+            height: 110px;
+            float: left;
+            text-align: center;
+        }
+        ul{
+            width: 938px;
+            height: 120px;
+            li{
+                width: 115px;
+                height: 52px;
+                float: left;
+                border: 1px solid #d2d2d2;
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                span{
+                    position: absolute;
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color:rgba(255,255,255,0.5);
+                    text-align: center;
+                    line-height: 52px;
+                    display: none;
+                    color: #f9860a;
+                    font-weight: bolder;
+                }
+            }
+            li:hover{
+                border-color: #f9860a;
+            }
+            li:hover span{
+                display: inline-block;
+            }
+        }
+    }
+    .jiage{
+        width: 100%;
+        height: 48px;
+        border: 1px dashed #d2d2d2;
+        border-top:none;
+        box-sizing: border-box;
+        padding-left: 10px;
+        span{
+            display: inline-block;
+            width: 100px;
+            line-height: 48px;
+            text-align: center;
+        }
+        input{
+            width: 80px;
+        }
+        button{
+            width: 60px;
+            background-color: red;
+            color: #d2d2d2;
+            border: none;
+            cursor: pointer;
+        }
+    }
+    .paixu{
+        width: 100%;
+        height: 50px;
+        box-sizing: border-box;
+        padding-top: 10px;
+        border: 1px solid #d2d2d2;
+        margin-top: 20px;
+        a{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-right: 1px solid #d2d2d2;
+            i{
+                font-style: normal;
+            }
+        }
+        .selected{
+            color: #f9860a;
+        }
+        a:hover{
+            color: #f9860a;
+        }
+    }
+    .goodslist{
+        width: 1200px;
+        height: 1880px;
+        margin: 20px auto;
+        ul{
+            width: 100%;
+            height: 100%;
+            li{
+                width: 235px;
+                height: 458px;
+                margin-right: 4px;
+                box-sizing: border-box;
+                border: 1px solid #fff;
+                float: left;
+                // padding: 11px 12px;
+                .shangpin{
+                    width: 235px;
+                     height: 458px;
+                     box-sizing: border-box;
+                     border: 1px solid #fff;
+                     padding: 11px 12px;
+                    .line1{
+                        width: 210px;
+                        height: 210px;
+                        margin-bottom: 10px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }  
+                    }
+                    .line2{
+                        height: 30px;
+                        margin-bottom: 15px;
+                        ul>li{
+                            width: 28px;
+                            height: 28px;
+                            border: 1px solid #d2d2d2;
+                            box-sizing: border-box;
+                            padding: 1px;
+                            float: left;
+                            img{
+                                width: 26px;
+                                height: 26px;
+                            }
+                        }
+                    }
+                    .line3{
+                        overflow: hidden;
+                        .price{
+                            color: red;
+                            float: left;
+                        }
+                        .salenum{
+                            color: #8c8c8c;
+                            float: right;
+                            font-size: 16px;
+                            em{
+                                font-weight: bold;
+                                font-style: normal;
+                            }
+                        }
+                    }
+                    .describe{
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                        color: rgba(0,0,0,0.8);
+                        span{
+                            display: inline-block;
+                            margin-top: 5px;
+                        }
+                        span:last-child{
+                            color: #666666;
+                        }
+                    }
+                    .footer{
+                        a{
+                            display: inline-block;
+                            width: 100px;
+                            height: 30px;
+                            border: 1px solid #f9860a;
+                            text-align: center;
+                            line-height: 30px;
+                            color: #f9860a;
+                        }
+                        a:first-child{
+                            color: black;
+                            width: 60px;
+                            margin-right: 20px;
+                        }
+                        a:hover{
+                            border: 1px dashed #f9860a;
+                        }
+                    }
+                }
+            }
+            li:hover{
+                border: 1px solid gray;
+                box-shadow: 0 0 4px 0 rgba(85,85,85,.4);
+                transition: border-color .1s ease;
+            }
+        }
+    }
+    .yebiao{
+       width: 1200px;
+       height: 80px;
+       margin: 0 auto;
+        .page {
+            height: 30px;
+            width: 500px;
+            margin: 50px auto;
+        }
+        
+        .page span {
+            float: left;
+            height: 30px;
+            width: 100px;
+            text-align: center;
+            line-height: 30px;
+            background-color: black;
+            color: aliceblue;
+            cursor: pointer; 
+        }
+        
+        .page .page-content {
+            float: left;
+            height: 30px;
+        }
+        
+        .page-content li {
+            float: left;
+            height: 30px;
+            width: 30px;
+            color: blue;
+            text-align: center;
+            line-height: 30px;
+            margin-left: 4px; 
+            margin-right: 4px ;
+            cursor: pointer; 
+            list-style: none;
+        }
+        .page-content li:hover{
+            box-sizing: border-box;
+            border: 1px solid #000;
+            color: black;
+        }
+        .page-content li.selected{
+            background-color: rebeccapurple;
+        }
+        
+        .page .disabled{
+            background-color: gray;
+        }
+    }
+    
+  }

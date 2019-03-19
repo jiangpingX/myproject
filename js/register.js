@@ -46,17 +46,61 @@ $("#zhece").click(function(){
     if(num5==0){
         $(".xieyi").children("p").css({"visibility":"visible"});
     }
+    else{
+        $(".xieyi").children("p").css({"visibility":"hidden"});
+    }
     if(num1==num2==num3==num4==num5==num6)
     {
-        alert("1");
+        var username = $("#input1").val();
+        var userpwd = $("#input2").val();
+        var usertel = $("#input4").val();
+        getuserData(username,userpwd,usertel).then(function(data){
+                setuserData(data);
+        })
     }
 })
 
 
 
+//获取数据
+function getuserData(username,userpwd,usertel){
+    var p = new Promise(function(resolve,reject){
+        $.ajax({
+            type:"get",
+            url:"../php/register.php",
+            data:{
+                username:username,
+                userpwd:userpwd,
+                usertel:usertel
+            },
+            dataType:"json",
+            success:function(data){
+                resolve(data);
+            }
+        })
+    })
+    return p;
+}
+//数据处理
+function setuserData(data){
+switch(data["code"])
+{
+    case 0:
+    // alert("用户名已存在");
+    $("#username_tip").css({"visibility":"visible"});
+    $("#username_tip").html("用户名已存在!");
 
-
-
+    break;
+    case 1:
+    alert("即将跳转");
+    //跳转到商品列表
+    break;
+    case 2:
+    $("#usertel_tip").css({"visibility":"visible"});
+    $("#usertel_tip").html("该手机号已被注册!");
+    break;
+}
+}
 
 
 function checkUsername(username){

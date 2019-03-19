@@ -142,6 +142,7 @@ html, body {
 }
 
 .homepage .homepage_in {
+  overflow: hidden;
   width: 1200px;
   margin: 0px auto;
 }
