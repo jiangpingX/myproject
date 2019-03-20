@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1091122_7usadsammpt.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1091122_sjy4kz7xmfi.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/goodslist.css">
     <title>商品列表页面</title>
@@ -40,13 +40,13 @@
             <button id="search">确定</button>
         </div>
         <div class="paixu">
-            <a href="javascript:;" class="selected">默认 <i>↓</i></a>
-            <a href="javascript:;">销量 <i>↑</i>  </a>
-            <a href="javascript:;">价格 <i>↑</i> </a>
+            <a href="javascript:;" class="selected" id="moren">默认 <i>↓</i></a>
+            <a href="javascript:;" id="xiaoliang">销量 <i>↑</i>  </a>
+            <a href="javascript:;" id="jiage">价格 <i>↑</i> </a>
         </div>
         <div class="goodslist">
             <ul id="list_wrap">
-                <li>
+                <!-- <li>
                     <div class="shangpin">
                        <div class="line1" > <img src="../images/chuang1.jpg" alt=""></div>
                        <div class="line2">
@@ -70,7 +70,7 @@
                         <a href="javascript:;"> <i class="iconfont icon-gouwuche1"></i> 加入购物车</a>
                     </div>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="yebiao">
@@ -78,13 +78,53 @@
 
                     </div>
         </div>
-        
+        <div class="right_gouwuche" id="right_shawdow">
+            <div class="tubiao">
+                <ul>
+                    <li> <i class="iconfont icon-gerentouxiang"></i>  <span class="s1">用户名: <em></em>    </span> </li>
+                    <li class="li" id="shawdowCar"> <i class="iconfont icon-gouwuche1"></i> <div>购物车</div> <span id="span_num1">0</span> </li>
+                    <li><i class="iconfont icon-wodedingdan"></i> <span class="s1">我的订单</span></li>
+                    <li> <i class="iconfont icon-youhuiquan"></i><span class="s1">我的优惠券</span></li>
+                    <li> <i class="iconfont icon-wodezichan"></i><span class="s1">我的资产</span></li>
+                    <li><i class="iconfont icon-yanjing"></i><span class="s1">我的足迹</span></li>
+                    <li><i class="iconfont icon-shoucang1"></i><span class="s1">我的收藏</span></li>
+                    <li ><i class="iconfont icon-mail"></i><span class="s1">我的邮箱</span></li>
+                </ul>
+            </div>
+            <div class="jiesuan">
+                <p>
+                    <span>购物车</span>
+                    <i></i>
+                </p>
+                <div class="list">
+                    <ul id="list_ul">
+                        <!-- <li>
+                            <img src="../images/chuang1.jpg" alt="">
+                            <div>
+                                <p>商品描述</p>
+                            ￥<span class="pricea">7880</span>×<span>3</span>
+                            </div>
+                            
+                        </li> -->
+                       
+                    </ul>
+                </div>
+                <div class="shopcar">
+                    <p>
+                        <span>共<em id="totalnum">4</em>件商品</span>
+                        <span> ￥<span id="totalprice">35600</span> </span>
+                    </p>
+                    <button>去购物车结算</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+<script src="../js/cookie.js"></script>
 <script src="../js/jquery-1.11.3.js"></script>
 <script src="../js/goodslist.js"></script>
-<script src="../js/index.js"> </script>
 <script src="../js/fenye.js"></script>
+<script src="../js/index.js"> </script>
 <script>
     $(document).ready(function(){
         $(".top").load('header2.html');

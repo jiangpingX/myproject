@@ -1,0 +1,294 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, input, button, textarea {
+  padding: 0;
+  margin: 0;
+}
+
+div, span {
+  box-sizing: border-box;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #f9860a;
+}
+
+.info {
+  width: 1200px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+}
+
+.info a {
+  text-decoration: none;
+  color: #666;
+  margin-right: 10px;
+}
+
+.contents {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.contents .left_content {
+  width: 400px;
+  height: 530px;
+  float: left;
+}
+
+.contents .left_content > img {
+  width: 400px;
+  height: 400px;
+  vertical-align: bottom;
+}
+
+.contents .left_content div {
+  width: 100%;
+  height: 89px;
+  border: 1px solid #999;
+}
+
+.contents .left_content div span {
+  float: left;
+  display: inline-block;
+  width: 38px;
+  height: 89px;
+  text-align: center;
+  line-height: 89px;
+  font-size: 20px;
+}
+
+.contents .left_content div ul {
+  float: left;
+  width: 320px;
+  height: 60px;
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-around;
+}
+
+.contents .left_content div ul li {
+  float: left;
+  width: 58px;
+  height: 58px;
+}
+
+.contents .left_content div ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+.contents .left_content .bigshawdow {
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 0;
+  left: 400px;
+  overflow: hidden;
+}
+
+.contents .left_content .bigshawdow img {
+  width: 800px;
+  height: 800px;
+}
+
+.contents .big_wrap {
+  width: 580px;
+  height: 567px;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+
+.contents .big_wrap .name {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contents .big_wrap .newp {
+  font-size: 14px;
+  color: #f42424;
+  margin-bottom: 10px;
+}
+
+.contents .big_wrap .wrap {
+  width: 580px;
+  height: 140px;
+  box-sizing: border-box;
+  background: url(../images/summary-bg.jpg) #f3f3f3 repeat-x 20px -60px;
+  padding: 22px 0 12px;
+}
+
+.contents .big_wrap .wrap span {
+  display: inline-block;
+}
+
+.contents .big_wrap .wrap .span1 {
+  float: left;
+  padding-left: 20px;
+  width: 50px;
+  margin-right: 10px;
+  line-height: 24px;
+  color: #999;
+  font-size: 12px;
+}
+
+.contents .big_wrap .wrap .span2 {
+  font-size: 36px;
+  height: 24px;
+  line-height: 24px;
+  float: left;
+  color: red;
+}
+
+.contents .big_wrap .wrap .span3 {
+  width: 52px;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 8px;
+  color: #fff;
+  margin: 3px 0 0 8px;
+  cursor: pointer;
+  color: red;
+}
+
+.contents .big_wrap .wrap ul {
+  width: 220px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+}
+
+.contents .big_wrap .wrap .wrap2 {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  padding-left: 20px;
+  margin-right: 10px;
+  line-height: 24px;
+  color: #999;
+  font-size: 12px;
+}
+
+.contents .big_wrap .wrap .wrap2 a {
+  text-decoration: line-through;
+  margin-left: 30px;
+}
+
+.contents .big_wrap .wrap_bottom {
+  width: 580px;
+  height: 283px;
+  color: #666;
+}
+
+.contents .big_wrap .wrap_bottom .p1 {
+  display: inline-block;
+  width: 70px;
+  color: #999;
+  text-align: center;
+}
+
+.contents .big_wrap .wrap_bottom .peisong {
+  line-height: 35px;
+}
+
+.contents .big_wrap .wrap_bottom .peisong div {
+  display: inline-block;
+}
+
+.contents .big_wrap .wrap_bottom .fuwu {
+  line-height: 35px;
+}
+
+.contents .big_wrap .wrap_bottom .fuwu .ww {
+  display: block;
+  margin-left: 78px;
+}
+
+.contents .big_wrap .wrap_bottom .jifen, .contents .big_wrap .wrap_bottom .chengnuo, .contents .big_wrap .wrap_bottom .yanse, .contents .big_wrap .wrap_bottom .huige, .contents .big_wrap .wrap_bottom shuliang {
+  line-height: 40px;
+}
+
+.contents .big_wrap .wrap_bottom .yanse .p2 {
+  display: inline-block;
+  width: 71px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #f9860a;
+}
+
+.contents .big_wrap .wrap_bottom .huige .p3 {
+  display: inline-block;
+  width: 126px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid #f9860a;
+  font-size: 16px;
+}
+
+.contents .big_wrap .wrap_bottom .shuliang div {
+  position: relative;
+  display: inline-block;
+  width: 73px;
+  height: 30px;
+  border: 1px solid #666;
+}
+
+.contents .big_wrap .wrap_bottom .shuliang div input {
+  width: 50px;
+  height: 30px;
+  border: none;
+  outline: none;
+}
+
+.contents .big_wrap .wrap_bottom .shuliang div span {
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  border: 0.5px solid #666;
+  cursor: pointer;
+  border-right: none;
+  border-bottom: none;
+}
+
+.contents .big_wrap .wrap_bottom .shuliang div .shang {
+  top: 0;
+  right: 0;
+}
+
+.contents .big_wrap .wrap_bottom .shuliang div .xia {
+  bottom: 0;
+  right: 0;
+}
+
+.contents .big_wrap .liji {
+  margin-top: 30px;
+  padding-left: 20px;
+}
+
+.contents .big_wrap .liji button {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: none;
+  background-color: #f9860a;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.contents .img {
+  float: left;
+}

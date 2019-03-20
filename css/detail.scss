@@ -1,0 +1,259 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, input, button, textarea {
+    padding: 0;
+    margin: 0;
+  }
+  div,span{
+      box-sizing: border-box;
+  }
+  .line{
+      width: 100%;
+      height: 1px;
+      background-color: #f9860a;
+  }
+  .info{
+      width: 1200px;
+      height: 40px;
+      line-height: 40px;
+      margin: 0 auto;
+      a{
+          text-decoration: none;
+          color:#666;
+          margin-right: 10px;
+      }
+  }
+  .contents{
+      position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    .left_content{
+        width: 400px;
+        height: 530px;
+        float: left;
+        >img{
+            width: 400px;
+            height: 400px;
+            vertical-align: bottom;
+        }
+        div{
+            width: 100%;
+            height: 89px;
+            border:1px solid #999;
+            span{
+                float: left;
+                display: inline-block;
+                width: 38px;
+                height: 89px;
+                text-align: center;
+                line-height: 89px;
+                font-size: 20px;
+            }
+            ul{
+                float: left;
+                width: 320px;
+                height: 60px;
+                display: flex;
+                margin-top: 15px;
+                justify-content: space-around;
+                li{
+                    float: left;
+                    width: 58px;
+                    height: 58px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .bigshawdow{
+            display: none;
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            top: 0;
+            left: 400px;
+            overflow: hidden;
+            img{
+                width: 800px;
+                height: 800px;
+            }
+        }
+    }
+    .big_wrap{
+        width: 580px;
+        height: 567px;
+        float: left;
+        box-sizing: border-box;
+        padding-left: 15px;
+        .name{
+            font-size: 18px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 10px;
+        }
+        .newp{
+            font-size: 14px;
+        color: #f42424;
+        margin-bottom: 10px;
+        }
+        .wrap{
+            width: 580px;
+            height: 140px;
+            box-sizing: border-box;
+            
+            background: url(../images/summary-bg.jpg) #f3f3f3 repeat-x 20px -60px;
+            padding: 22px 0 12px;
+            span{
+                display: inline-block;
+            }
+            .span1{
+                float: left;
+                padding-left: 20px;
+                width: 50px;
+                margin-right: 10px;
+                line-height: 24px;
+                color: #999;
+                font-size: 12px;
+            }
+            .span2{
+                font-size: 36px;
+                height: 24px;
+                line-height: 24px;
+                float: left;
+                color: red;
+            }
+            .span3{
+                width: 52px;
+                height: 20px;
+                line-height: 20px;
+                padding-left: 8px;
+                color: #fff;
+                margin: 3px 0 0 8px;
+                cursor: pointer;
+                color: red;
+            }
+            ul{
+                width: 220px;
+                padding-right: 30px;
+                display: flex;
+                justify-content: space-between;
+                float: right;
+            }
+            .wrap2{
+                width: 100%;
+                float: left;
+                margin-top: 20px;
+                padding-left: 20px;
+              margin-right: 10px;
+                line-height: 24px;
+                color: #999;
+                font-size: 12px;    
+                a{
+                    text-decoration: line-through;
+                    margin-left: 30px;
+                }
+            }
+        }
+        .wrap_bottom{
+            width: 580px;
+            height: 283px;
+            color: #666;
+            .p1{
+                display: inline-block;
+                width: 70px;
+                
+                color: #999;
+                text-align: center;
+            }
+            .peisong{
+                line-height: 35px;
+                div{
+                    display: inline-block;
+                }
+            }
+            .fuwu{
+                line-height: 35px;
+                .ww{
+                    display:block;
+                    margin-left: 78px;
+                }
+            }
+            .jifen,.chengnuo,.yanse,.huige,shuliang{
+                line-height: 40px;
+            }
+            .yanse{
+                .p2{
+                    display: inline-block;
+                    width: 71px;
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                    border: 1px solid #f9860a;
+                }
+            }
+            .huige{
+                .p3{
+                    display: inline-block;
+                    width: 126px;
+                    height: 32px;
+                    line-height: 32px;
+                    text-align: center;
+                    border: 1px solid #f9860a;
+                    font-size: 16px;
+                }
+            }
+            .shuliang{
+                div{
+                    position: relative;
+                    display: inline-block;
+                    width: 73px;
+                    height: 30px;
+                    border: 1px solid #666;
+                    input{
+                        width: 50px;
+                        height: 30px;
+                        border: none;
+                        outline: none;
+                    }
+                    span{
+                        position: absolute;
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        text-align: center;
+                        line-height: 15px;
+                        border: 0.5px solid #666;
+                        cursor: pointer;
+                        border-right: none;
+                        border-bottom: none;
+                    }
+                    .shang{
+                        top: 0;right: 0;
+                    }
+                    .xia{
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+        .liji{
+            margin-top: 30px;
+            padding-left: 20px;
+            button{
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                border: none;
+                background-color: #f9860a;
+                color:white;
+                font-weight: bolder;
+                cursor: pointer;
+            }
+        }
+    }
+   .img{
+       float: left;
+   }
+  }

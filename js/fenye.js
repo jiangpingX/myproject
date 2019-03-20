@@ -90,6 +90,7 @@ function Page(ele,json){
 		}
 
 		Page.prototype.create = function(){
+			this.target.innerHTML = "";
 			this.pre_page = document.createElement("span");
 			this.pre_page.className = "page-prev";
 			this.pre_page.innerHTML = this.option["pre"] ;
@@ -111,16 +112,17 @@ function Page(ele,json){
 
 
 		getNum();
-		// //从数据库获取数据总数
+
        
 		
-
+		//价格区间的ajax请求
 		$("#search").click(function(){
 			var startPrice = $("#starPrice").val();
 			var endPrice = $("#endPrice").val();
 			//获取价格区间的数据数量
-			getjiagequNum(startPrice,endPrice);
-			getData2(startPrice,endPrice).then(function(data){
+			
+			getjiagequNum(startPrice,endPrice).then(function(data){
+				qujiannum = data["count"];
 				new Page("#box",{
 					dataNum:qujiannum,//数据的总数
 					showPage:7,//显示几个页码
@@ -129,14 +131,120 @@ function Page(ele,json){
 					next:"next",
 					callBack: function (pageIndex) {
 						//ajax动态生成商品列表
-					setData1(data);
+						getData2(startPrice,endPrice,(pageIndex-1)*20,20).then(function(data){
+							setData1(data)
+						});
 					}
 				});
 			})
 
 		})
+	//销量按钮
+	var a = 0;
+	$("#xiaoliang").click(function(){
+		var salenums ="";
+		 a++;
+		 if(a%2==0)
+		 {
+			salenums="asc";
+			$("#xiaoliang>i").html("↑");
+		 }
+		 else{
+			salenums="desc";
+			$("#xiaoliang>i").html("↓");
+		 }
+		 getNum2().then(function(data){
+			 var num =data["count"];
+			 new Page("#box",{
+				dataNum:num,//数据的总数
+				showPage:7,//显示几个页码
+				showNum:20,//每页显示的数据条数
+				pre:"pre",
+				next:"next",
+				callBack: function (pageIndex) {
+					//ajax动态生成商品列表
+					getXiaoliang(salenums,(pageIndex-1)*20,20).then(function(data){
+						setData1(data);
+					})
+				}
+			});
+		 })
+		 
+	})
+	
+	//价格按钮
+	var b = 0;
+	$("#jiage").click(function(){
+		var price ="";
+		 b++;
+		 if(b%2==0)
+		 {
+			price="asc";
+			$("#jiage>i").html("↑");
+		 }
+		 else{
+			price="desc";
+			$("#jiage>i").html("↓");
+		 }
+		 getNum2().then(function(data){
+			var num =data["count"];
+			new Page("#box",{
+			 dataNum:num,//数据的总数
+			 showPage:7,//显示几个页码
+			 showNum:20,//每页显示的数据条数
+			 pre:"pre",
+			 next:"next",
+			 callBack: function (pageIndex) {
+				 //ajax动态生成商品列表
+				 getjiage(price,(pageIndex-1)*20,20).then(function(data){
+					 setData1(data);
+				 })
+			 }
+		 });
+		})
+	})
 
-		//获取数据库的数据总量
+		//销量排序
+		function getXiaoliang(salenums,skipNum,showNum){
+			var p = new Promise(function(resolve,reject){
+				$.ajax({
+					type:"get",
+					url:"../php/salenums.php",
+					data:{
+						salenums:salenums,
+						skipNum:skipNum,
+						showNum:showNum
+					},
+					dataType:"json",
+					success:function(data){
+						resolve(data);
+					}
+				})
+			})
+			return p;
+		}
+
+		//价格排序
+		function getjiage(price,skipNum,showNum){
+			var p = new Promise(function(resolve,reject){
+				$.ajax({
+					type:"get",
+					url:"../php/priceshunxu.php",
+					data:{
+						price:price,
+						skipNum:skipNum,
+						showNum:showNum
+					},
+					dataType:"json",
+					success:function(data){
+						resolve(data);
+					}
+				})
+			})
+			return p;
+		}
+
+		//获取数据库的数据总量,
 		function getNum(){
 			var p = new Promise(function(resolve,reject){
 				$.ajax({
@@ -148,6 +256,20 @@ function Page(ele,json){
 						var num = data["count"];
 						initPage(num);
 						
+					}
+				});	
+			})
+			return p;
+		}
+		//获取数据库的数据数量,为排序用
+		function getNum2(){
+			var p = new Promise(function(resolve,reject){
+				$.ajax({
+					type:"get",
+					url:"../php/getdatanum.php",
+					dataType:"json",
+					success:function(data){
+						resolve(data);
 					}
 				});	
 			})
@@ -167,8 +289,6 @@ function Page(ele,json){
 					dataType:"json",
 					success:function(data){
 						resolve(data);
-					 qujiannum = data["count"];
-					 console.log(qujiannum);
 					}
 				});	
 			})
@@ -212,14 +332,16 @@ function Page(ele,json){
 			}
 			
 		 //获取价格区间的数据
-			function getData2(startPrice,endPrice){
+			function getData2(startPrice,endPrice,skipNum,showNum){
 				var p = new Promise(function(resolve,reject){
 					$.ajax({
 						type:"get",
 						url:"../php/pricequjian.php",
 						data:{
 							startPrice:startPrice,
-							endPrice:endPrice
+							endPrice:endPrice,
+							skipNum:skipNum,
+							showNum,showNum
 						},
 						dataType:"json",
 						success:function(data){
@@ -270,6 +392,7 @@ function Page(ele,json){
 
 			
 			function setData1(data){
+				// $("#list_wrap").html("");
 				  var str = "";
 				  data.forEach(function(item){
 					var {id,goodsprice,salenums,goodsdescribe,goodsimg}=item;
@@ -295,7 +418,7 @@ function Page(ele,json){
 					</div>
 					<div class="footer">
 						<a href="javascript:;"> <i class="iconfont icon-shoucang1"></i> 收藏</a>
-						<a href="javascript:;"> <i class="iconfont icon-gouwuche1"></i> 加入购物车</a>
+						<a href="javascript:;" onclick="getthisdata(${id})"> <i class="iconfont icon-gouwuche1"></i> 加入购物车</a>
 					</div>
 					</div>
 				</li>`;

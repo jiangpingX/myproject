@@ -37,6 +37,8 @@ function setData(data){
         case 1:
         // $("#cuowu_tip").css({"visibility":visile});
         $("#cuowu_tip").css({"visibility":"hidden"});
+        setCookie("username",$("#username").val(),7);
+        setCookie("userid",$("#username").val()+1,7);
         alert("即将跳转");
         //跳转到商品列表
         break;
